@@ -50,71 +50,72 @@
 }
 
 body {
-  background-color: var(--clr-background);
-  color: var(--clr-text);
-  font-family: var(--ff-main);
-  font-size: var(--fs-16);
-  font-weight: var(--fw-regular);
-  line-height: 1.625;
-
   /* Flex properties */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
+  background-color: var(--clr-background);
+  color: var(--clr-text);
+  font-family: var(--ff-main);
+  font-size: var(--fs-16);
+  font-weight: var(--fw-regular);
   height: 100vh;
-}
-
-.container {
+  line-height: 1.625;
 }
 
 .progress-area {
-  position: relative;
-
+  /* Flex properties */
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  /* Position */
+  position: relative;
 
   min-width: 350px;
 }
 
 .progress-area::before {
-  content: '';
-
-  background-color: var(--clr-inactive-color);
-  height: 3px;
-
+  /* Position */
   position: absolute;
   top: 50%;
   left: 0%;
   width: 100%;
+
+  background-color: var(--clr-inactive-color);
+  content: '';
+  height: 3px;
   z-index: -2;
 }
 
 .progress-bar {
-  background-color: var(--clr-active-color);
-  height: 3px;
-
+  /* Position */
   position: absolute;
   top: 50%;
   left: 0%;
   width: 0%;
+
+  background-color: var(--clr-active-color);
+  height: 3px;
+  transition: 0.5s ease-in;
   z-index: -1;
 }
 
 .number {
-  background: var(--clr-white);
-  color: var(--clr-text);
-  border: 2px solid var(--clr-inactive-color);
-  border-radius: 50%;
-
-  height: 35px;
-  width: 35px;
-
+  /* Flex properties */
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background: var(--clr-white);
+  border: 2px solid var(--clr-inactive-color);
+  border-radius: 50%;
+  color: var(--clr-text);
+  height: 35px;
+  width: 35px;
+  transition: 0.5s ease-in;
   z-index: 1;
 }
 
@@ -123,23 +124,23 @@ body {
 }
 
 .buttons {
-  margin-top: 2em;
-
+  /* Flex properties */
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1em;
+
+  margin-top: 2em;
 }
 
 .btn {
   background-color: var(--clr-active-color);
-  color: var(--clr-white);
-
-  width: 85px;
-  height: 35px;
-  border-radius: 0.5em;
   border: none;
+  border-radius: 0.5em;
+  color: var(--clr-white);
   cursor: pointer;
+  height: 35px;
+  width: 85px;
 }
 
 .btn:hover,

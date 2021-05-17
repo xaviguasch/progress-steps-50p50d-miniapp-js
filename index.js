@@ -26,6 +26,7 @@ btnPrev.addEventListener('click', () => {
 })
 
 function paintDOM() {
+  // Numbers functionality
   numbers.forEach((num) => {
     if (num.innerText <= currentNumber) {
       num.classList.add('current')
@@ -34,12 +35,7 @@ function paintDOM() {
     }
   })
 
-  const currents = document.querySelectorAll('.current')
-
-  const progressBarWidth = ((currents.length - 1) / (numbers.length - 1)) * 100
-
-  progressBar.style.width = `${progressBarWidth}%`
-
+  // Button functionality
   if (currentNumber === 1) {
     btnPrev.disabled = true
     btnNext.disabled = false
@@ -50,4 +46,9 @@ function paintDOM() {
     btnPrev.disabled = false
     btnNext.disabled = false
   }
+
+  // Progress bar functionality
+  const currents = document.querySelectorAll('.current')
+  const progressBarWidth = ((currents.length - 1) / (numbers.length - 1)) * 100
+  progressBar.style.width = `${progressBarWidth}%`
 }
