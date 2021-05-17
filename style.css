@@ -43,6 +43,7 @@
 
   --clr-background: hsl(228, 38%, 97%);
   --clr-active-color: hsl(204, 70%, 53%);
+  --clr-active-color-hover: hsl(204, 55%, 64%);
   --clr-inactive-color: hsl(0, 0%, 88%);
   --clr-white: hsl(0, 0%, 100%);
   --clr-text: hsl(0, 0%, 60%);
@@ -63,4 +64,89 @@ body {
   align-items: center;
 
   height: 100vh;
+}
+
+.container {
+}
+
+.progress-area {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  min-width: 350px;
+}
+
+.progress-area::before {
+  content: '';
+
+  background-color: var(--clr-inactive-color);
+  height: 3px;
+
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 100%;
+  z-index: -2;
+}
+
+.progress-bar {
+  background-color: var(--clr-active-color);
+  height: 3px;
+
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 0%;
+  z-index: -1;
+}
+
+.number {
+  background: var(--clr-white);
+  color: var(--clr-text);
+  border: 2px solid var(--clr-inactive-color);
+  border-radius: 50%;
+
+  height: 35px;
+  width: 35px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.number.current {
+  border-color: var(--clr-active-color);
+}
+
+.buttons {
+  margin-top: 2em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.btn {
+  background-color: var(--clr-active-color);
+  color: var(--clr-white);
+
+  width: 85px;
+  height: 35px;
+  border-radius: 0.5em;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: var(--clr-active-color-hover);
+}
+
+.btn:disabled {
+  background-color: var(--clr-inactive-color);
 }
